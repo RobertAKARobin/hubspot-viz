@@ -10,12 +10,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		var App = (function(){
 			return {
+				oninit: function(){
+					m.request({
+						method: 'GET',
+						url: 'https://api.hubapi.com/deals/v1/deal/paged',
+						data: ENV
+					}).then(function(res){
+						console.log(res)
+					})
+				},
 				view:  function(){
 					return [
-						m('ul', [
-							m('li', 'Client id: ' + ENV.client_id),
-							m('li', 'Client secret: ' + ENV.client_secret)
-						])
+						m('p', 'Hello')
 					];
 				}
 			}
