@@ -2,12 +2,15 @@
 <html>
 	<head>
 		<title>Hubspot Viz</title>
-		<script src="./node_modules/mithril/mithril.js"></script>
-		<script src="./main.js"></script>
 	</head>
 	<body>
 		<h1>Monthly Revenue</h1>
 
-		<div id="app"></div>
+		<?php
+
+$ENV = json_decode(file_get_contents('env.json'));
+print_r($ENV);
+
+		?>
 	</body>
 </html>
