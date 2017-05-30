@@ -9,7 +9,13 @@
 		<?php
 
 $ENV = json_decode(file_get_contents('env.json'));
-print_r($ENV);
+$req = curl_init();
+curl_setopt_array($req, array(
+	CURLOPT_URL => 'https://api.hubapi.com/deals/v1/deal/paged?' . http_build_query($ENV)
+));
+$res = curl_exec($req);
+curl_close($req);
+print_r($res);
 
 		?>
 	</body>
